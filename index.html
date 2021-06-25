@@ -4,18 +4,36 @@
     <meta charset="UTF-8">
     <title>pan の world</title>
 </head>
-<body style="background-color: #555555;">
-<h1><a href="html/clock.html" target="_blank">翻页时钟</a></h1>
-<h1><a href="http://www.caiyunapp.com/map/#121.2959,31.1925" target="_blank">彩云天气</a></h1>
-<!-- <h1><a href="html/test.html" target="_blank">video</a></h1> -->
-<h2 id="abc"></h2>
-<h2>版本:1.11</h2>
+<body style="background-color: #22272e;">
+<h2 id="abc" class="version"></h2>
+
+<div class="context"><h1><a href="html/clock.html" target="_blank">翻页时钟</a></h1>
+    <h1><a href="http://www.caiyunapp.com/map/#121.2959,31.1925" target="_blank">彩云天气</a></h1>
+    <h1><a href="html/test.html" target="_blank">video</a></h1>
+</div>
+<h2 class="version">版本:1.10</h2>
 </body>
 <script>
-    let d = new Date();
-    document.getElementById('abc').innerHTML = "加载: " + d.getHours() + " : " + d.getMinutes() + " : " + d.getSeconds();
-    setTimeout(function () {
-        window.location.href = location.href;
-    }, 500000)
+    setInterval(function () {
+        let d = new Date();
+        let seconds = d.getSeconds();
+        document.getElementById('abc').innerHTML = " " + d.getHours() + " : " + d.getMinutes() + " : " + (seconds < 10 ? ('0' + seconds) : seconds);
+
+    }, 200)
+
 </script>
+<style>
+    a {
+        color: #539bf5;
+    }
+
+    .version {
+        color: cadetblue;
+    }
+
+    .context {
+        padding: 30px 5%;
+
+    }
+</style>
 </html>
