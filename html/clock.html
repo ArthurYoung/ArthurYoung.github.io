@@ -4891,7 +4891,7 @@
             var i = e - c / 2, o = (t + n) / 2;
             return N(i, o, n, c / 2)
         }, R = H, I = {
-            props: {cid: String, msg: {default: "13"}, bg: {default: !0}, ampm: {default: !1}}, setup: function (e) {
+            props: {cid: String, msg: {default: "12"}, bg: {default: !0}, ampm: {default: !1}}, setup: function (e) {
                 var t = Object(c["h"])({
                     r: 64,
                     fontSize: 660,
@@ -4904,7 +4904,7 @@
                     var t = {ap: ""};
                     if (t.num = e.msg, e.ampm) {
                         var n = parseInt(e.msg);
-                        n < 13 ? t.ap = "AM" : n < 24 && (t.ap = "PM", t.num = n - 12)
+                        n < 12 ? t.ap = "AM" : n < 24 && (t.ap = "PM", t.num = n - 12)
                     }
                     return t
                 }, i = function () {
