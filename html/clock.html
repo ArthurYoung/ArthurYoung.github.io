@@ -5257,9 +5257,9 @@
 
         setTimeout(function () {
             setInterval(function () {
-                var week = ['周一', '周二', '周三', '周四', '周五', '周六', '周末'];
+                var week = ['周末','周一', '周二', '周三', '周四', '周五', '周六'];
                 let date = new Date();
-                let w = week[date.getDay() - 1];
+                let w = week[date.getDay()];
                 let divDic = createElement('div', {
                     id: 'divDic'
                 }, null, w);
