@@ -13,30 +13,12 @@ body {
 }
 
 .fill {
-    top: 1%;
     position: fixed;
-    right: 1%;
-    left: 1%;
-    bottom: 1%;
-    background-color: #1D445D;
-    width: 550px;
-    height: 550px;
-    border-radius: 50px;
-    overflow: hidden;
+    left: 50%;
+    top: 52%;
+    zoom: 65%;
 }
 
-.backd {
-    top: 20px;
-    position: fixed;
-    right: 20px;
-    left: 20px;
-    bottom: 20px;
-    background-color: #1D445D;
-    width: 520px;
-    height: 510px;
-    border-radius: 50px;
-    z-index: 0;
-}
 
 .centre {
     position: absolute;
@@ -158,11 +140,11 @@ body {
     z-index: -1;
 }
 
-.anchorK {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    z-index: -10;
+
+.backi {
+    position: fixed;
+    top: 3%;
+    left: 29%;
+    width: 42%;
 }
+

@@ -53,8 +53,8 @@ function utilityClock(container) {
         rotate(hourElement, time / 60 / 12)
         requestAnimationFrame(animate)
     }
-    for (var i = 1; i <= 60; i ++) minute(i)
-    for (var i = 1; i <= 12; i ++) hour(i)
+    // for (var i = 1; i <= 60; i ++) minute(i)
+    // for (var i = 1; i <= 12; i ++) hour(i)
     animate()
 }
 
