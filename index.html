@@ -8,6 +8,7 @@
 <h2 id="abc" class="version"></h2>
 
 <div class="context"><h1><a href="html/clock.html" target="_blank">翻页时钟</a></h1>
+    <h1><a href="html/html5-apple-watch-clock-face/index2.html" target="_blank">指针时钟</a></h1>
     <h1><a href="http://www.caiyunapp.com/map/#121.2959,31.1925" target="_blank">彩云天气</a></h1>
     <h1><a href="html/test.html" target="_blank">video</a></h1>
 </div>
@@ -18,7 +19,7 @@
         let d = new Date();
         let minutes = d.getMinutes();
         let seconds = d.getSeconds();
-        document.getElementById('abc').innerHTML = " " + d.getHours() + " : " +  (minutes < 10 ? ('0' + minutes) : minutes) + " : " + (seconds < 10 ? ('0' + seconds) : seconds);
+        document.getElementById('abc').innerHTML = " " + d.getHours() + " : " + (minutes < 10 ? ('0' + minutes) : minutes) + " : " + (seconds < 10 ? ('0' + seconds) : seconds);
 
     }, 100)
 
