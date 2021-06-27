@@ -60,7 +60,7 @@ body {
 }
 
 .circle-2 {
-    background: #FA9F22;
+    background: red;
     width: 8px;
     height: 8px;
 }
@@ -82,7 +82,7 @@ body {
 .second-hand {
     width: 2px;
     height: 164px;
-    background: #FA9F22;
+    background: red;
     transform: translate(-50%, -100%) translateY(24px);
 }
 
