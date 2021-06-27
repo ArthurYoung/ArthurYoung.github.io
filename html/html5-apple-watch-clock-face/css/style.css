@@ -109,7 +109,7 @@ body {
 
 .hour-text {
     position: absolute;
-    font: 40px Hei, Helvetica, Arial, sans-serif;
+    font: 35px Hei, Helvetica, Arial, sans-serif;
     color: white;
     transform: translate(-50%,-50%);
 }
