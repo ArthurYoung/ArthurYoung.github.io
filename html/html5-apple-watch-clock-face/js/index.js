@@ -70,7 +70,7 @@ function autoResize(element, nativeSize) {
 if (document.body.offsetWidth > 1500) {
     document.querySelector('.fill').style.zoom = '80%'
 }
-window.onload = function () {
+setInterval(function () {
     let tianqi = document.querySelector('#he-plugin-standard');
     if (tianqi) {
         tianqi.style.position = 'fixed'
@@ -78,4 +78,4 @@ window.onload = function () {
         tianqi.style.left = '1%'
         tianqi.style.zoom = '100%'
     }
-}
+}, 500)
