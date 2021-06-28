@@ -22,7 +22,7 @@ function utilityClock(container) {
         var anchor = document.createElement('div')
         anchor.className = 'anchor'
         var element = document.createElement('div')
-        element.className = 'element minute-line'
+        element.className = 'tianqi minute-line'
         rotate(anchor, n)
         anchor.appendChild(element)
         dynamic.appendChild(anchor)
@@ -66,6 +66,16 @@ function autoResize(element, nativeSize) {
     update()
     window.addEventListener('resize', update)
 }
+
 if (document.body.offsetWidth > 1500) {
-    document.querySelector('.fill').style.zoom ='80%'
+    document.querySelector('.fill').style.zoom = '80%'
+}
+window.onload = function () {
+    let tianqi = document.querySelector('#he-plugin-standard');
+    if (tianqi) {
+        tianqi.style.position = 'fixed'
+        tianqi.style.bottom = '1%'
+        tianqi.style.left = '1%'
+        tianqi.style.zoom = '100%'
+    }
 }
