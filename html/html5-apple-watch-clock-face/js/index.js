@@ -78,4 +78,11 @@ setInterval(function () {
         tianqi.style.left = '1%'
         tianqi.style.zoom = '150%'
     }
+    let h5url = document.querySelector('.wv-lt-refresh');
+    if (h5url) {
+        h5url.style.position = 'fixed';
+        h5url.style.bottom = '1%';
+        h5url.style.left = '15px';
+        // h5url.innerHTML = '_______';
+    }
 }, 500)
