@@ -67,7 +67,7 @@ function utilityClock(container) {
     animate();
     setInterval(function () {
         animate();
-    }, 100)
+    }, 200)
 }
 
 function autoResize(element, nativeSize) {
@@ -114,7 +114,7 @@ setInterval(function () {
         }
     }
 
-}, 50)
+}, 100)
 
 if (document.body.offsetWidth > 1500) {
     document.querySelector('.fill').style.zoom = '80%'
@@ -138,3 +138,18 @@ for (let i = 0; i < 100; i++) {
     }, 100 * i);
 
 }
+
+function drawCircle() {
+    var canvas = document.querySelector('#canvas');
+    if (canvas) {
+        var context = canvas.getContext("2d");
+        context.arc(300, 300, 145, 0, Math.PI * 2, false);
+        context.closePath();
+        context.fillStyle = "#1b445b";
+        context.fill();
+    } else {
+        return;
+    }
+}
+
+drawCircle();

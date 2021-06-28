@@ -36,41 +36,44 @@ Recreating Apple Watch's Utility face <http://www.apple.com/watch/design/> in HT
             </div>
             <div class="expand round circle-2"></div>
             <div class="expand round circle-3"></div>
+            <canvas id="canvas" width="600px" height="600px"></canvas>
+            <div class="yuan"  width="600px" height="600px"><div class="boxx"></div></div>
             <div class="week"></div>
         </div>
     </div>
 </div>
-<div class="notice" id="notice">.</div>
+<!--通知-->
+<div class="notice" id="notice"></div>
 
 
-<div id="he-plugin-standard"  ></div>
+<div id="he-plugin-standard"></div>
 <script>
-   /*
-    //标准天气
+    /*
+     //标准天气
+     WIDGET = {
+         "CONFIG": {
+             "layout": "2",
+             "width": "200",
+             "height": 270,
+             "background": "5",
+             "dataColor": "FFFFFF",
+             "borderRadius": "5",
+             "city": "CN101021300",
+             "key": "0fdec9cd58a74c7c901271db1fce934a"
+         }
+     }*/
     WIDGET = {
         "CONFIG": {
-            "layout": "2",
+            "layout": "1",
             "width": "200",
-            "height": 270,
+            "height": "150",
             "background": "5",
             "dataColor": "FFFFFF",
-            "borderRadius": "5",
             "city": "CN101021300",
-            "key": "0fdec9cd58a74c7c901271db1fce934a"
+            "modules": "10",
+            "key": "395cded6a1e64de7860f818295120f80"
         }
-    }*/
-   WIDGET = {
-       "CONFIG": {
-           "layout": "1",
-           "width": "200",
-           "height": "150",
-           "background": "5",
-           "dataColor": "FFFFFF",
-           "city": "CN101021300",
-           "modules": "10",
-           "key": "395cded6a1e64de7860f818295120f80"
-       }
-   }
+    }
 </script>
 <script src="https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0"></script>
 <script src="js/index.js"></script>

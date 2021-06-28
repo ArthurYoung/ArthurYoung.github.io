@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>画圆</title>
+    <script src="http://apps.bdimg.com/libs/raphael/2.1.2/raphael-min.js"></script>
+</head>
+<body>
+
+<div id="holder"></div>
+<script>
+    var paper = Raphael( "holder", 400, 400 );
+    var circle = paper.circle(200, 200, 150);  // 从200,200 开始画一个半径150的圆
+    circle.attr("fill", "#f00"); //并用红色填充
+</script>
+</body>
+</html>
