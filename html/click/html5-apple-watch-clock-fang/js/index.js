@@ -22,7 +22,7 @@ function utilityClock(container) {
         var anchor = document.createElement('div')
         anchor.className = 'anchor'
         var element = document.createElement('div')
-        element.className = 'element minute-line'
+        element.className = 'tianqi minute-line'
         rotate(anchor, n)
         anchor.appendChild(element)
         dynamic.appendChild(anchor)

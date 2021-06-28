@@ -11,13 +11,15 @@ body {
     left: 50%;
     top: 50%;
 }
-.fill{
+
+.fill {
     top: 1%;
     position: fixed;
     right: 1%;
     left: 1%;
     bottom: 1%;
 }
+
 .centre {
     position: absolute;
     top: 50%;
@@ -81,7 +83,7 @@ body {
     width: 2px;
     height: 164px;
     background: #FA9F22;
-    transform: translate(-50%,-100%) translateY(24px);
+    transform: translate(-50%, -100%) translateY(24px);
 }
 
 .hour {
@@ -92,7 +94,7 @@ body {
     width: 4px;
     height: 50px;
     background: white;
-    transform: translate(-50%,-100%);
+    transform: translate(-50%, -100%);
 }
 
 .fat-hand {
@@ -100,7 +102,7 @@ body {
     height: 57px;
     border-radius: 10px;
     background: white;
-    transform: translate(-50%,-100%) translateY(-18px);
+    transform: translate(-50%, -100%) translateY(-18px);
 }
 
 .minute-hand {
@@ -111,12 +113,13 @@ body {
     position: absolute;
     font: 35px Hei, Helvetica, Arial, sans-serif;
     color: white;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
 .hour-10 {
     padding-left: 0.4ex;
 }
+
 .hour-11 {
     padding-left: 0.25ex;
 }
@@ -125,13 +128,33 @@ body {
     position: absolute;
     font: 12px Avenir Next, Helvetica, Arial, sans-serif;
     color: white;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
 .minute-line {
     background: white;
     width: 1px;
     height: 9px;
-    transform: translate(-50%,-100%) translateY(-131px);
+    transform: translate(-50%, -100%) translateY(-131px);
     opacity: 0.34;
+}
+
+.notice {
+    position: fixed;
+    bottom: 3%;
+    color: #fa9f22;
+    right: 2%;
+    background-color: #292929;
+    border-left-width: 100px;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+#he-plugin-standard {
+    /*position: fixed;*/
+    /*🔱🔱🔱🔱:🔱🔱🔱🔱🔱;*/
+
+    /*
+    bottom: 1%;
+    left: 1%;*/
 }
