@@ -76,6 +76,6 @@ setInterval(function () {
         tianqi.style.position = 'fixed'
         tianqi.style.bottom = '1%'
         tianqi.style.left = '1%'
-        tianqi.style.zoom = '100%'
+        tianqi.style.zoom = '200%'
     }
 }, 500)
