@@ -82,7 +82,7 @@ setInterval(function () {
     if (h5url) {
         h5url.style.position = 'fixed';
         h5url.style.bottom = '1%';
-        h5url.style.left = '15px';
+        h5url.style.left = '1%';
         // h5url.innerHTML = '_______';
     }
 }, 500)
