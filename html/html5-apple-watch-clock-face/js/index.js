@@ -66,9 +66,6 @@ function autoResize(element, nativeSize) {
     update()
     window.addEventListener('resize', update)
 }
-
-window.onload = function () {
-    if (document.body.offsetWidth > 1500) {
-        document.querySelector('.fill').style.zoom ='80%'
-    }
+if (document.body.offsetWidth > 1500) {
+    document.querySelector('.fill').style.zoom ='80%'
 }
