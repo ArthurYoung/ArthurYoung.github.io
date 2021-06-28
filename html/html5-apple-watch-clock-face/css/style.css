@@ -158,3 +158,22 @@ body {
     bottom: 1%;
     left: 1%;*/
 }
+
+.dateRi {
+    zoom: 100%;
+    padding-right: 5px;
+}
+
+#divDic {
+    color: #fff;
+    position: fixed;
+    right: -90px;
+    top: -9px;
+    border-style: solid;
+    border-color: #999;
+    border-radius: 7px;
+    border-width: 1px;
+    padding: 2px;
+    font: 12px Avenir Next, Helvetica, Arial, sans-serif;
+    z-index: -100;
+}
