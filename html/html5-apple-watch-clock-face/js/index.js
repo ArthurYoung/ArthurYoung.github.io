@@ -70,19 +70,22 @@ function autoResize(element, nativeSize) {
 if (document.body.offsetWidth > 1500) {
     document.querySelector('.fill').style.zoom = '80%'
 }
-setInterval(function () {
-    let tianqi = document.querySelector('#he-plugin-standard');
-    if (tianqi) {
-        tianqi.style.position = 'fixed'
-        tianqi.style.bottom = '1%'
-        tianqi.style.left = '1%'
-        tianqi.style.zoom = '150%'
-    }
-    let h5url = document.querySelector('.wv-lt-refresh');
-    if (h5url) {
-        h5url.style.position = 'fixed';
-        h5url.style.bottom = '1%';
-        h5url.style.left = '1%';
-        // h5url.innerHTML = '_______';
-    }
-}, 500)
+for (let i = 0; i < 100; i++) {
+    setTimeout(function () {
+        let tianqi = document.querySelector('#he-plugin-standard');
+        if (tianqi) {
+            tianqi.style.position = 'fixed'
+            tianqi.style.bottom = '1%'
+            tianqi.style.left = '1%'
+            tianqi.style.zoom = '150%'
+        }
+        let h5url = document.querySelector('.wv-lt-refresh');
+        if (h5url) {
+            h5url.style.position = 'fixed';
+            h5url.style.bottom = '1%';
+            h5url.style.left = '1%';
+            // h5url.innerHTML = '_______';
+        }
+    }, 100 * i);
+
+}
