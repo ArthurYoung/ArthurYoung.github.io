@@ -47,6 +47,7 @@ Recreating Apple Watch's Utility face <http://www.apple.com/watch/design/> in HT
 
 
 <div id="he-plugin-standard"></div>
+<!--
 <script>
     /*
      //标准天气
@@ -76,6 +77,51 @@ Recreating Apple Watch's Utility face <http://www.apple.com/watch/design/> in HT
     }
 </script>
 <script src="https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0"></script>
+-->
+<div id="he-plugin-simple"></div>
+<script>
+    WIDGET = {
+        "CONFIG": {
+            "modules": "203",
+            "background": "5",
+            "tmpColor": "FFFFFF",
+            "tmpSize": "16",
+            "cityColor": "FFFFFF",
+            "citySize": "16",
+            "aqiColor": "FFFFFF",
+            "aqiSize": "16",
+            "weatherIconSize": "50",
+            "alertIconSize": "18",
+            "padding": "0px 5px 0px 5px",
+            "shadow": "0",
+            "language": "auto",
+            "borderRadius": "5",
+            "fixed": "true",
+            "vertical": "right",
+            "horizontal": "center",
+            "city": "CN101021300",
+            "left": "10",
+            "top": "10",
+            "key": "05731fc5407d4a2db9bc95b8a35c1c60"
+        }
+    }
+    for (let i = 0; i < 100; i++) {
+        setTimeout(function () {
+            let tianqi = document.querySelector('#he-plugin-simple');
+            if (tianqi) {
+                tianqi.style.position = 'fixed'
+                tianqi.style.bottom = '4%'
+                tianqi.style.top = ''
+                tianqi.style.left = '4%'
+                tianqi.style.zoom = '150%'
+            }
+
+        }, 100 * i);
+
+    }
+</script>
+<script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
+
 <script src="js/index.js"></script>
 
 </body>

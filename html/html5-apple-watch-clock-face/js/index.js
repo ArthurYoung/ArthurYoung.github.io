@@ -1,7 +1,7 @@
 var clock = document.querySelector('#utility-clock')
 let _is_power = location.href.indexOf('power') > 0;
 utilityClock(clock)
-let _isTimeout = 5000;
+let _isTimeout = 3000;
 if (_is_power) {
     _isTimeout = 500;
 }
