@@ -5237,6 +5237,25 @@
 </video>-->
 <script>
 
+    function showWeek(createElement) {
+        var week = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+        let date = new Date();
+        let w = week[date.getDay()];
+        let divDic = createElement('div', {
+            id: 'divDic'
+        }, null, w);
+        // divDic.addEventListener('mousedown', dragHandler, false);
+        let hm = document.querySelector('div.timer > div:nth-child(2)');
+        let we = document.querySelector("#divDic");
+        if (we == null && hm != null) {
+            hm.appendChild(divDic);
+        } else {
+            if (we.innerHTML != w) {
+                we.innerHTML = w;
+            }
+        }
+    }
+
     (function () {
         function createElement(type, attrArray, evtListener, html) {
             let node = document.createElement(type);
@@ -5256,25 +5275,11 @@
         }
 
         setTimeout(function () {
+            showWeek(createElement);
             setInterval(function () {
-                var week = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
-                let date = new Date();
-                let w = week[date.getDay()];
-                let divDic = createElement('div', {
-                    id: 'divDic'
-                }, null, w);
-                // divDic.addEventListener('mousedown', dragHandler, false);
-                let hm = document.querySelector('div.timer > div:nth-child(2)');
-                let we = document.querySelector("#divDic");
-                if (we == null && hm != null) {
-                    hm.appendChild(divDic);
-                } else {
-                    if (we.innerHTML != w) {
-                        we.innerHTML = w;
-                    }
-                }
+                showWeek(createElement);
 
-            }, 50)
+            }, 3000)
         }, 306)
 
 

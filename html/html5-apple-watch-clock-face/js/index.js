@@ -1,7 +1,10 @@
 var clock = document.querySelector('#utility-clock')
 let _is_power = location.href.indexOf('power') > 0;
 utilityClock(clock)
-
+let _isTimeout = 5000;
+if (_is_power) {
+    _isTimeout = 500;
+}
 if (clock.parentNode.classList.contains('fill')) autoResize(clock, 295 + 32)
 
 function utilityClock(container) {
@@ -74,7 +77,7 @@ function utilityClock(container) {
     if (!_is_power) {
         setInterval(function () {
             animate();
-        }, 1000)
+        }, 500)
     } else {
         document.title = 'Power ' + document.title
     }
@@ -86,9 +89,10 @@ function autoResize(element, nativeSize) {
         element.style.transform = element.style.webkitTransform = 'scale(' + scale.toFixed(3) + ')'
     }
     update();
+
     setInterval(function () {
         update();
-    }, 2000)
+    }, _isTimeout)
 }
 
 function createElement(type, attrArray, evtListener, html) {
@@ -108,7 +112,7 @@ function createElement(type, attrArray, evtListener, html) {
     return node;
 }
 
-setInterval(function () {
+function showWeek() {
     var week = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
     let date = new Date();
     let w = '<span class="dateRi">' + (date.getUTCDate() + 1) + '</span>' + week[date.getDay()];
@@ -125,8 +129,12 @@ setInterval(function () {
             we.innerHTML = w;
         }
     }
+}
 
-}, 100)
+showWeek();
+setInterval(function () {
+    showWeek();
+}, _isTimeout)
 
 if (document.body.offsetWidth > 1500) {
     document.querySelector('.fill').style.zoom = '80%'
@@ -151,17 +159,3 @@ for (let i = 0; i < 100; i++) {
 
 }
 
-function drawCircle() {
-    var canvas = document.querySelector('#canvas');
-    if (canvas) {
-        var context = canvas.getContext("2d");
-        context.arc(300, 300, 145, 0, Math.PI * 2, false);
-        context.closePath();
-        context.fillStyle = "#1b445b";
-        context.fill();
-    } else {
-        return;
-    }
-}
-
-// drawCircle();
