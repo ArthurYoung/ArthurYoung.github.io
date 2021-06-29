@@ -1,4 +1,5 @@
 var clock = document.querySelector('#utility-clock')
+let _is_power = location.href.indexOf('power') > 0;
 utilityClock(clock)
 
 if (clock.parentNode.classList.contains('fill')) autoResize(clock, 295 + 32)
@@ -49,8 +50,12 @@ function utilityClock(container) {
             1000*/
 
         // var time =new Date().getTime() % (1000*60*60*12) /1000 +60*60*8;
-        var time = (new Date().getTime() % 43200000 / 1000 + 28800).toFixed(0);
-        // var time =(new Date().getTime() % 43200000 /1000 +28800);
+        var time;
+        if (_is_power) {
+            time = (new Date().getTime() % 43200000 / 1000 + 28800);
+        } else {
+            time = (new Date().getTime() % 43200000 / 1000 + 28800).toFixed(0);
+        }
 
 
         // now.getMilliseconds() / 1000
@@ -58,16 +63,21 @@ function utilityClock(container) {
         rotate(secondElement, time)
         rotate(minuteElement, time / 60)
         rotate(hourElement, time / 60 / 12)
-
-        // requestAnimationFrame(animate)
+        if (_is_power) {
+            requestAnimationFrame(animate)
+        }
 
     }
     for (var i = 1; i <= 60; i++) minute(i)
     for (var i = 1; i <= 12; i++) hour(i)
     animate();
-    setInterval(function () {
-        animate();
-    }, 200)
+    if (!_is_power) {
+        setInterval(function () {
+            animate();
+        }, 1000)
+    } else {
+        document.title = 'Power ' + document.title
+    }
 }
 
 function autoResize(element, nativeSize) {
