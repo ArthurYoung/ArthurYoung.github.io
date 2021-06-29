@@ -85,8 +85,10 @@ function autoResize(element, nativeSize) {
         var scale = Math.min(window.innerWidth, window.innerHeight) / nativeSize
         element.style.transform = element.style.webkitTransform = 'scale(' + scale.toFixed(3) + ')'
     }
-    update()
-    window.addEventListener('resize', update)
+    update();
+    setInterval(function () {
+        update();
+    }, 2000)
 }
 
 function createElement(type, attrArray, evtListener, html) {
