@@ -49,8 +49,8 @@ function utilityClock(container) {
             1000*/
 
         // var time =new Date().getTime() % (1000*60*60*12) /1000 +60*60*8;
-       //   var time = (new Date().getTime() % 43200000 / 1000 + 28800).toFixed(0);
-       var time =(new Date().getTime() % 43200000 /1000 +28800);
+      var time = (new Date().getTime() % 43200000 / 1000 + 28800).toFixed(0);
+  //     var time =(new Date().getTime() % 43200000 /1000 +28800);
 
 
         // now.getMilliseconds() / 1000
@@ -65,9 +65,9 @@ function utilityClock(container) {
     for (var i = 1; i <= 60; i++) minute(i)
     for (var i = 1; i <= 12; i++) hour(i)
     animate();
-    //  setInterval(function () {
-  //        animate();
-  //    }, 200)
+    setInterval(function () {
+          animate();
+  }, 200)
 }
 
 function autoResize(element, nativeSize) {
@@ -152,4 +152,4 @@ function drawCircle() {
     }
 }
 
-drawCircle();
+//drawCircle();
