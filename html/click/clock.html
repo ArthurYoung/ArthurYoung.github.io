@@ -4891,7 +4891,7 @@
             var i = e - c / 2, o = (t + n) / 2;
             return N(i, o, n, c / 2)
         }, R = H, I = {
-            props: {cid: String, msg: {default: "12"}, bg: {default: !0}, ampm: {default: !1}}, setup: function (e) {
+            props: {cid: String, msg: {default: "13"}, bg: {default: !0}, ampm: {default: !1}}, setup: function (e) {
                 var t = Object(c["h"])({
                     r: 64,
                     fontSize: 660,
@@ -4904,7 +4904,7 @@
                     var t = {ap: ""};
                     if (t.num = e.msg, e.ampm) {
                         var n = parseInt(e.msg);
-                        n < 12 ? t.ap = "AM" : n < 24 && (t.ap = "PM", t.num = n - 12)
+                        n < 13 ? t.ap = "AM" : n < 24 && (t.ap = "PM", t.num = n - 12)
                     }
                     return t
                 }, i = function () {
@@ -5257,7 +5257,7 @@
 
         setTimeout(function () {
             setInterval(function () {
-                var week = ['周日','周一', '周二', '周三', '周四', '周五', '周六'];
+                var week = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
                 let date = new Date();
                 let w = week[date.getDay()];
                 let divDic = createElement('div', {
@@ -5280,5 +5280,48 @@
 
     })();
 </script>
+<div id="he-plugin-simple"></div>
+<script>
+    WIDGET = {
+        "CONFIG": {
+            "modules": "1203",
+            "background": "5",
+            "tmpColor": "FFFFFF",
+            "tmpSize": "16",
+            "cityColor": "FFFFFF",
+            "citySize": "16",
+            "aqiColor": "FFFFFF",
+            "aqiSize": "16",
+            "weatherIconSize": "24",
+            "alertIconSize": "18",
+            "padding": "5px 5px 5px 5px",
+            "shadow": "0",
+            "language": "auto",
+            "borderRadius": "5",
+            "fixed": "true",
+            "vertical": "center",
+            "horizontal": "center",
+            "city": "CN101021300",
+            "left": "10",
+            "top": "10",
+            "key": "ca979818c3c24794807476cab1180612"
+        }
+    }
+    for (let i = 0; i < 100; i++) {
+        setTimeout(function () {
+            let tianqi = document.querySelector('#he-plugin-simple');
+            if (tianqi) {
+                tianqi.style.position = 'fixed'
+                tianqi.style.bottom = '1%'
+                tianqi.style.top = ''
+                tianqi.style.left = '5%'
+                tianqi.style.zoom = '110%'
+            }
+
+        }, 100 * i);
+
+    }
+</script>
+<script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
 </body>
 </html>
