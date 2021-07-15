@@ -168,12 +168,12 @@ body {
     color: #fff;
     position: fixed;
     right: -90px;
-    top: -9px;
+    top: -10px;
     border-style: solid;
     border-color: #999;
     border-radius: 7px;
     border-width: 2px;
-    padding: 2px;
+    padding: 0px 2px 2px 2px;
     font: 12px Avenir Next, Helvetica, Arial, sans-serif;
     z-index: -100;
 }

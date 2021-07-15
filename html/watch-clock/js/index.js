@@ -115,7 +115,7 @@ function createElement(type, attrArray, evtListener, html) {
 function showWeek() {
     var week = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
     let date = new Date();
-    let w = '<span class="dateRi">' + (date.getDate()) + '</span>' + week[date.getDay()];
+    let w = '<span class="dateRi">' + (date.getDate()) + '</span><span class="dateWeek">' + week[date.getDay()] +'</span>';
     let divDic = createElement('div', {
         id: 'divDic'
     }, null, w);
