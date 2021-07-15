@@ -60,7 +60,7 @@ body {
 }
 
 .circle-2 {
-    background: #EB5545;
+    background: #FA9F22;
     width: 8px;
     height: 8px;
 }
@@ -82,7 +82,7 @@ body {
 .second-hand {
     width: 2px;
     height: 164px;
-    background: #EB5545;
+    background: #FA9F22;
     transform: translate(-50%, -100%) translateY(24px);
 }
 
@@ -142,7 +142,7 @@ body {
 .notice {
     position: fixed;
     bottom: 3%;
-    color: #EB5545;
+    color: #FA9F22;
     right: 2%;
     background-color: #292929;
     border-left-width: 100px;
