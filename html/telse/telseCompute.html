@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>里程计算器</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /*background-color: #f4f7f6;*/
+            /*margin: 0;*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("./modeoY.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: #fff;
+            zoom: 1.1;
+        }
+
+        .container {
+            background-color: #000000b8;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 600px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            /*color: #333;*/
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px;
+            vertical-align: middle;
+        }
+
+        label {
+            color: #d9d9d9;
+            white-space: nowrap; /* 防止换行 */
+        }
+
+        input[type="text"] {
+            width: 80px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: right;
+        }
+
+        .button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        button:hover:not(:disabled) {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            text-align: center;
+        }
+
+        .result input[type="text"] {
+            width: 150px;
+            border: none;
+            background: none;
+            font-size: 18px;
+            text-align: center;
+            color: #333;
+        }
+
+        .calc-button {
+            /*width: 60px;*/
+            /*padding: 5px;*/
+            background-color: #6c757d;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .button button {
+            margin: 0px 65px 0px 21px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>里程计算器</h1>
+    <form id="mileageForm">
+        <table>
+            <tr>
+                <td><label></label></td>
+                <td><label>公里数</label></td>
+                <td><label></label></td>
+                <td><label>百分比</label></td>
+            </tr>
+            <tr>
+                <td><label for="totalMileage">总续航:</label></td>
+                <td><input type="text" id="totalMileage" value="430"/></td>
+                <td>km</td>
+                <td><input type="text" id="totalPercentage" value="60"/></td>
+                <td>KW</td>
+            </tr>
+            <tr>
+                <td><label for="currentMileage">当前续航/电量:</label></td>
+                <td><input type="text" id="currentMileage" value="320"/></td>
+                <td>km</td>
+                <td><input type="text" id="currentPercentage" value="70"/></td>
+                <td>%</td>
+            </tr>
+            <tr>
+                <td><label for="currentPower">当前功耗:</label></td>
+                <td><input type="text" id="currentPower" value="145"/></td>
+                <td>w/km</td>
+            </tr>
+            <tr>
+                <td><label for="reserPercentage">保留电量:</label></td>
+                <td><input type="text" id="reserMileage" value="80"/></td>
+                <td>km</td>
+                <td><input type="text" id="reserPercentage" value="20"/></td>
+                <td>%</td>
+            </tr>
+            <tr>
+                <td><label for="optimalRemainingMileage">最佳剩余公里数:</label></td>
+                <td><input type="text" id="optimalRemainingMileage" readonly/></td>
+                <td>km</td>
+                <td><input type="text" id="optimalRemainingPercentage" readonly/></td>
+                <td>km</td>
+                <td>
+                </td>
+            </tr>
+            <!--<tr>
+                <td><label for="optimalRealPower">计算实际功耗:</label></td>
+                <td><input type="text" id="optimalRealPower" readonly/></td>
+                <td>w/km</td>
+                <td>
+                    <button type="button" class="calc-button" onclick="calculate()">计算</button>
+                </td>
+            </tr>-->
+        </table>
+        <div class="button">
+            <button type="button" class="save">保存</button>
+            <button type="button" class="calc-button" onclick="calculate()">计算</button>
+            <button type="reset" class="resultBtn">重置</button>
+        </div>
+    </form>
+</div>
+<script>
+    function calculate() {
+        const a = parseFloat(document.getElementById('totalMileage').value);
+        let p = parseFloat(document.getElementById('totalPercentage').value);
+        const x = parseFloat(document.getElementById('currentMileage').value);
+        const y = parseFloat(document.getElementById('currentPercentage').value);
+        const z = parseFloat(document.getElementById('currentPower').value);
+        const b = parseFloat(document.getElementById('reserPercentage').value);
+        const c = parseFloat(document.getElementById('reserMileage').value);
+        if (p < 10) {
+            p = 60;
+        }
+        //功率
+        try {
+            const f1 = (p * (x - c) / a) / z * 1000;
+            document.getElementById('optimalRemainingMileage').value = f1.toFixed(0);
+        } catch (e) {
+        }
+
+        //百分比
+
+        try {
+            if (y > 1) {
+                const f2 = (p * (y - b) / 100) / z * 1000;
+                document.getElementById('optimalRemainingPercentage').value = f2.toFixed(0);
+            }
+        } catch (e) {
+        }
+        console.log('end');
+    }
+</script>
+</body>
+</html>
