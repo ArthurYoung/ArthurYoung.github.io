@@ -24,14 +24,7 @@
         background-color: #fafafa;
     }
 
-    footer {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%); /* 水平居中 */
-        width: fit-content; /* 或其他合适的宽度 */
-        padding: 10px; /* 根据需要添加内边距 */
-    }
+
 </style>
 <body>
 <h2 id="abc" class="version"></h2>
@@ -46,11 +39,13 @@
     <h1><a href="html/resource/test.html" target="_blank">video</a></h1>
     <script src="html/js/jquery-3.1.1.js"></script>
 </div>
-<footer class="">
-    <a href="https://github.com/x-xxxx/x-xxxx.github.io" target="_blank">2024.6.1</a>
-    <a href="https://github.com/x-xxxx/x-xxxx.github.io/settings/pages" target="_blank">page</a>
-    <a href="https://x-xxxx.github.io/" target="_blank">在线</a>
-</footer>
+<div id="myFooter"></div>
+<script src="html/js/jquery-3.1.1.js"></script>
+<script> $(document).ready(function () {
+    $("#myFooter").load("/html/footer.html");
+});</script>
+
+
 </body>
 <script>
     setInterval(function () {
