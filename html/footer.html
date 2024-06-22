@@ -4,6 +4,7 @@
     <a href="https://x-xxxx.github.io/" target="_blank">在线</a>
 
     <span   id="fullscreen-button">全屏</span>
+    <span   id="refresh-button">刷新</span>
 </footer>
 
 <style>
@@ -28,6 +29,9 @@
         } else {
             document.documentElement.requestFullscreen();
         }
+    });
+    document.getElementById('refresh-button').addEventListener('click', function () {
+        location.reload();
     });
 </script>
 

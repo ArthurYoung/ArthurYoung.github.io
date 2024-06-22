@@ -23,7 +23,12 @@
             zoom: 1.1;
             overflow: hidden;
         }
+        .pageTitle {
+            text-align: center;
 
+            font-size: 40px;
+            padding-bottom: 65px;
+        }
         .container {
             background-color: #000000b8;
             padding: 30px;
@@ -32,12 +37,7 @@
             width: 600px;
         }
 
-        h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            /*color: #333;*/
-            text-align: center;
-        }
+
 
         table {
             width: 100%;
@@ -121,13 +121,15 @@
         }
 
         .button button {
-            margin: 0px 65px 0px 21px;
+            margin: 0px 50px 0px 100px;
         }
+
+
     </style>
 </head>
 <body>
 <div class="container">
-    <h1>里程计算器</h1>
+    <h1 class="pageTitle">里程计算器</h1>
     <form id="mileageForm">
         <table>
             <tr>
@@ -192,9 +194,9 @@
             </tr>-->
         </table>
         <div class="button">
-            <button type="button" class="save">保存</button>
-            <button type="button" class="calc-button" onclick="calculate()">计算</button>
-            <button type="reset" class="resultBtn">重置</button>
+<!--            <button type="button" class="save">保存</button>-->
+            <button type="reset" class="calc-button">重置</button>
+            <button type="button" class="calc-button1" onclick="calculate()">计算</button>
         </div>
     </form>
 </div>
