@@ -21,6 +21,7 @@
             background-size: cover;
             color: #fff;
             zoom: 1.1;
+            overflow: hidden;
         }
 
         .container {
@@ -51,6 +52,14 @@
         label {
             color: #d9d9d9;
             white-space: nowrap; /* 防止换行 */
+        }
+
+        table select {
+            font-size: 16px;
+            height: 33px;
+            width: 97px;
+            border-radius: 5px;
+            padding-left: 50px;
         }
 
         input[type="text"] {
@@ -131,14 +140,19 @@
                 <td><label for="totalMileage">总续航:</label></td>
                 <td><input type="text" id="totalMileage" value="430"/></td>
                 <td>km</td>
-                <td><input type="text" id="totalPercentage" value="60"/></td>
+                <td>
+                    <select id="totalPercentage"/>
+                </td>
                 <td>KW</td>
             </tr>
             <tr>
                 <td><label for="currentMileage">当前续航/电量:</label></td>
                 <td><input type="text" id="currentMileage" value="320"/></td>
                 <td>km</td>
-                <td><input type="text" id="currentPercentage" value="70"/></td>
+                <td>
+                    <select id="currentPercentage"/>
+
+                </td>
                 <td>%</td>
             </tr>
             <tr>
@@ -148,9 +162,15 @@
             </tr>
             <tr>
                 <td><label for="reserPercentage">保留电量:</label></td>
-                <td><input type="text" id="reserMileage" value="80"/></td>
+                <td>
+                    <select id="reserMileage"/>
+
+                </td>
                 <td>km</td>
-                <td><input type="text" id="reserPercentage" value="20"/></td>
+                <td>
+
+                    <select id="reserPercentage"/>
+                </td>
                 <td>%</td>
             </tr>
             <tr>
@@ -185,6 +205,14 @@
 
 
 <script>
+
+
+    // 循环创建1到100的选项
+    setOption('reserPercentage', 20, 25, 1, 1);
+    setOption('reserMileage', 80, 100, 0, 5);
+    setOption('currentPercentage', 60, 100, 0, 1);
+    setOption('totalPercentage', 60, 70, 50, 1);
+
     function calculate() {
         const a = parseFloat(document.getElementById('totalMileage').value);
         let p = parseFloat(document.getElementById('totalPercentage').value);
@@ -213,6 +241,39 @@
         } catch (e) {
         }
         console.log('end');
+    }
+
+    function setOption(id, def, start, end, step = 1) {
+        var select = document.getElementById(id);
+        if (start > end) {
+            for (var i = start; i > end; i -= step) {
+                // 创建一个新的option元素
+                var option = document.createElement('option');
+                // 设置option的值和文本
+                option.value = i;
+                option.text = i;
+                if (i == def) {
+                    option.selected = true;
+                }
+                // 将option添加到select中
+                select.appendChild(option);
+            }
+        } else {
+            for (var i = end; i <= start; i += step) {
+                // 创建一个新的option元素
+                var option = document.createElement('option');
+                // 设置option的值和文本
+                option.value = i;
+                option.text = i;
+                if (i == def) {
+                    option.selected = true;
+                }
+                // 将option添加到select中
+                select.appendChild(option);
+            }
+        }
+
+
     }
 </script>
 </body>
