@@ -2,6 +2,8 @@
     <a href="https://github.com/x-xxxx/x-xxxx.github.io" target="_blank">2024.6.2</a>
     <a href="https://github.com/x-xxxx/x-xxxx.github.io/settings/pages" target="_blank">page</a>
     <a href="https://x-xxxx.github.io/" target="_blank">在线</a>
+
+    <span   id="fullscreen-button">全屏</span>
 </footer>
 
 <style>
@@ -14,7 +16,16 @@
         padding: 10px; /* 根据需要添加内边距 */
     }
 
-    footer a {
+    footer >* {
         color: #ffffff9c;
     }
 </style>
+<script>
+    document.getElementById('fullscreen-button').addEventListener('click', function () {
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        } else {
+            document.documentElement.requestFullscreen();
+        }
+    });
+</script>
