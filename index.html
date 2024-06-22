@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>第七空间</title>
-
     <link rel="icon" type="image/x-ico" href="./html/img/img_1.png"/>
-
 </head>
-<body  >
+<body>
 <h2 id="abc" class="version"></h2>
+
 <div class="context">
     <h1><a href="/html/telse/telseCompute.html" target="_blank">公里计算器</a></h1>
     <h1><a href="html/click/clock.html" target="_blank">翻页时钟</a></h1>
@@ -19,7 +18,10 @@
     <h1><a href="html/resource/test.html" target="_blank">video</a></h1>
     <script src="html/js/jquery-3.1.1.js"></script>
 </div>
-<h2 class="version" onclick="window.open('https://github.com/x-xxxx/x-xxxx.github.io')">版本:2024.6.1</h2>
+<footer class="">
+    <a href="https://github.com/x-xxxx/x-xxxx.github.io/settings/pages" target="_blank">page</a>
+    <a href="https://github.com/x-xxxx/x-xxxx.github.io" target="_blank">版本:2024.6.1</a>
+</footer>
 </body>
 <script>
     setInterval(function () {
@@ -48,6 +50,15 @@
     body {
         /*color: #fafafa;*/
         background-color: #fafafa;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%); /* 水平居中 */
+        width: fit-content; /* 或其他合适的宽度 */
+        padding: 10px; /* 根据需要添加内边距 */
     }
 </style>
 </html>
